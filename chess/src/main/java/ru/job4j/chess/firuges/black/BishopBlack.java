@@ -24,11 +24,18 @@ public class BishopBlack implements Figure {
     }
 
     public boolean isDiagonal(Cell source, Cell dest) {
-        return false;
+        for (int i = 0; i < Math.abs(dest.getX() - source.getX()); i++) {
+        }
+        return true;
     }
 
     @Override
     public Figure copy(Cell dest) {
         return new BishopBlack(dest);
+    }
+
+    public static void main(String[] args) {
+        BishopBlack bishopBlack = new BishopBlack(Cell.C1);
+        bishopBlack.isDiagonal(Cell.A8, Cell.H8);
     }
 }
