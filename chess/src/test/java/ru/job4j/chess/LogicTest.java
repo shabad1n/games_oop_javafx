@@ -28,7 +28,7 @@ public class LogicTest {
    public void noFigureFindBy()
          throws FigureNotFoundException, OccupiedCellException{
         Logic logic = new Logic();
-        logic.add(new BishopBlack(Cell.C1));
+        logic.add(new BishopBlack(Cell.C2));
         logic.add(new BishopBlack(Cell.D2));
         logic.move(Cell.C1, Cell.D2);
     }
