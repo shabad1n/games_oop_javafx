@@ -9,6 +9,7 @@ public class Win {
                 break;
             }
         }
+        System.out.println(" ");
         return result;
     }
 
