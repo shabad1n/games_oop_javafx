@@ -52,3 +52,4 @@ public class BishopBlack implements Figure {
         bishopBlack.way(Cell.G5);
     }
 }
+
