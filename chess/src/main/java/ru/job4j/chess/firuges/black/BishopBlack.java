@@ -27,12 +27,15 @@ public class BishopBlack implements Figure {
         Cell[] steps = new Cell[size];
         int deltaX = dest.getX() - position.getX() > 0 ? 1 : -1;
         int deltaY = dest.getY() - position.getY() > 0 ? 1 : -1;
-        int startX = position.getX() + deltaX;
-        int startY = position.getY() + deltaY;
+        int startX = position.getX();
+        int startY = position.getY();
         for (int index = 0; index < size; index++) {
-            steps[index] = Cell.findBy(startX, startY);
             startX += deltaX;
             startY += deltaY;
+            steps[index] = Cell.findBy(startX, startY);
+        }
+        for (Cell rsl : steps) {
+            System.out.println(rsl);
         }
         return steps;
     }
@@ -44,12 +47,6 @@ public class BishopBlack implements Figure {
     @Override
     public Figure copy(Cell dest) {
         return new BishopBlack(dest);
-    }
-
-    public static void main(String[] args) {
-        BishopBlack bishopBlack = new BishopBlack(Cell.C1);
-        bishopBlack.isDiagonal(Cell.A8, Cell.H8);
-        bishopBlack.way(Cell.G5);
     }
 }
 

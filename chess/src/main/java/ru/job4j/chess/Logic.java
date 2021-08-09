@@ -22,19 +22,15 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
-        int temp = 0;
-        while (temp != figures.length) {
-            for (int index = 0; index != steps.length; index++) {
-                Figure figure = figures[temp];
-                if (figure != null && figure.position().equals(steps[index])) {
-                    throw new OccupiedCellException("Занято братец");
+        for (Cell wayFigure : steps) {
+            for (Figure allFigure : figures) {
+                    if (allFigure != null && allFigure.position().equals(wayFigure)) {
+                        throw new OccupiedCellException("Занято братец");
+                    }
                 }
             }
-            temp++;
+            return true;
         }
-        return true;
-
-    }
 
     public void clean() {
         Arrays.fill(figures, null);
@@ -48,6 +44,6 @@ public final class Logic {
                 return index;
             }
         }
-        throw new FigureNotFoundException();
+        throw new FigureNotFoundException("Фигура не найдена");
     }
 }
