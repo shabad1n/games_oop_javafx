@@ -27,10 +27,10 @@ public final class Logic {
                     if (allFigure != null && allFigure.position().equals(wayFigure)) {
                         throw new OccupiedCellException("Занято братец");
                     }
-                }
             }
-            return true;
         }
+        return true;
+    }
 
     public void clean() {
         Arrays.fill(figures, null);
